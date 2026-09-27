@@ -1,0 +1,8 @@
+services:
+  lahuta:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8084:80"
+    restart: unless-stopped
