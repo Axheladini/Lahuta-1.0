@@ -8,7 +8,7 @@ const count = ref(0)
 </script>
 
 <template>
-  <section id="center">
+  <section id="center" class="green_background">
     <div class="hero">
       <img :src="heroImg" class="base" width="170" height="179" alt="" />
       <img :src="vueLogo" class="framework" alt="Vue logo" />

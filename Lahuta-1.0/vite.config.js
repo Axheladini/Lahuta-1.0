@@ -1,7 +1,21 @@
-import vue from '@vitejs/plugin-vue'
+// vite.config.js
 import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/scss/_variables.scss";',
+        silenceDeprecations: ['color-functions', 'import', 'global-builtin'],
+        quietDeps: true, // suppresses deprecation warnings from node_modules dependencies specifically
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  }
 })
